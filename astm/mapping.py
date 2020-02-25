@@ -422,10 +422,16 @@ class RepeatedComponentField(Field):
             del self.list[index]
 
         def __getitem__(self, index):
-            return self.field._get_value(self.list[index])
+            if isinstance(index, slice):
+                return self.__class__(self.list[index], self.field)
+            else:
+                return self.field._get_value(self.list[index])
 
         def __setitem__(self, index, value):
-            self.list[index] = self.field._set_value(value)
+            if isinstance(index, slice):
+                self.list[index] = [self.field._set_value(v) for v in value]
+            else:
+                self.list[index] = self.field._set_value(value)
 
         def __delslice__(self, i, j):
             del self.list[i:j]
