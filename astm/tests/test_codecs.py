@@ -93,7 +93,7 @@ class DecodeRecordTestCase(unittest.TestCase):
         self.assertEqual(res, codec.decode_record(msg, 'ascii'))
 
     def test_decode_with_repeated_components(self):
-        msg = f('A|B^C\D^E|F')
+        msg = f(r'A|B^C\D^E|F')
         res = ['A', [['B', 'C'], ['D', 'E']], 'F']
         self.assertEqual(res, codec.decode_record(msg, 'ascii'))
 
@@ -125,7 +125,7 @@ class EncodeTestCase(unittest.TestCase):
         self.assertEqual(msg, codec.encode_message(seq, data, 'ascii'))
 
     def test_encode_record(self):
-        msg = b'A|B^C\D^E|F^G|H'
+        msg = br'A|B^C\D^E|F^G|H'
         record = codec.decode_record(msg, 'ascii')
         self.assertEqual(msg, codec.encode_record(record, 'ascii'))
 

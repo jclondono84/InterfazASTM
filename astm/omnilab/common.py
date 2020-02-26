@@ -51,7 +51,7 @@ class Header(HeaderRecord):
     :param type: Record Type ID. Always ``H``.
     :type type: str
 
-    :param delimeter: Delimiter Definition. Always ``\^&``.
+    :param delimeter: Delimiter Definition. Always ``\\^&``.
     :type delimeter: str
 
     :param message_id: Message Control ID. Not used.

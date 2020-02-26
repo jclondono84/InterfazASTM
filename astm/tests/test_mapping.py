@@ -525,7 +525,7 @@ class RepeatedComponentFieldTestCase(unittest.TestCase):
         self.assertEqual(obj.numbers[4], [4])
         self.assertEqual(len(obj.numbers), 5)
         del obj.numbers[3:]
-        self.assertEquals(len(obj.numbers), 3)
+        self.assertEqual(len(obj.numbers), 3)
 
     def test_proxy_sort_fails(self):
         class Dummy(mapping.Mapping):
