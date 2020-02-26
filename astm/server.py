@@ -84,7 +84,7 @@ class BaseRecordsDispatcher(object):
         return record
 
     def _default_handler(self, record):
-        log.warn('Record remains unprocessed: %s', record)
+        log.warning('Record remains unprocessed: %s', record)
 
     def on_header(self, record):
         """Header record handler."""

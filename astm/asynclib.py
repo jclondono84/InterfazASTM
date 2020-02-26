@@ -317,8 +317,8 @@ class Dispatcher(object):
 
     During asynchronous processing, each mapped channel's :meth:`readable` and
     :meth:`writable` methods are used to determine whether the channel's socket
-    should be added to the list of channels :c:func:`select`\ ed or
-    :c:func:`poll`\ ed for read and write events.
+    should be added to the list of channels :c:func:`select`\\ ed or
+    :c:func:`poll`\\ ed for read and write events.
 
     """
 

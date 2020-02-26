@@ -20,7 +20,7 @@ encode_record = lambda r: codec.encode_record(r, ENCODING)
 class OmnilabTestCase(unittest.TestCase):
 
     def test_header_request(self):
-        data = 'H|\^&|||HOST^1.0.0|||||||P|E 1394-97|20091116104731'
+        data = r'H|\^&|||HOST^1.0.0|||||||P|E 1394-97|20091116104731'
         header = omnilab.client.Header(*decode_record(data))
         self.assertEqual(header.type, 'H')
         self.assertEqual(header.sender.name, 'HOST')
@@ -30,7 +30,7 @@ class OmnilabTestCase(unittest.TestCase):
                          datetime.datetime(2009, 11, 16, 10, 47, 31))
 
     def test_header_response(self):
-        data = 'H|\^&|||LabOnline^1.0.0|||||||P|E 1394-97|20091116104731'
+        data = r'H|\^&|||LabOnline^1.0.0|||||||P|E 1394-97|20091116104731'
         header = omnilab.server.Header(*decode_record(data))
         self.assertEqual(header.type, 'H')
         self.assertEqual(header.sender.name, 'LabOnline')
@@ -71,7 +71,7 @@ class OmnilabTestCase(unittest.TestCase):
         self.assertEqual(patient.location, 'CHIR')
 
     def test_order_request(self):
-        data = 'O|1|12120001||^^^NA^Sodium\^^^Cl^Clorum|R|20011023105715|20011023105715||||N||||S|||CHIM|AXM|Lab1|12120||||O|||||LAB2'
+        data = r'O|1|12120001||^^^NA^Sodium\^^^Cl^Clorum|R|20011023105715|20011023105715||||N||||S|||CHIM|AXM|Lab1|12120||||O|||||LAB2'
         order = omnilab.client.Order(*decode_record(data))
         self.assertEqual(order.type, 'O')
         self.assertEqual(order.seq, 1)
