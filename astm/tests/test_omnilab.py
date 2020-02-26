@@ -95,7 +95,7 @@ class OmnilabTestCase(unittest.TestCase):
         self.assertEqual(order.laboratory, 'LAB2')
 
     def test_order_response(self):
-        data = 'O|1|25140008|^1003^3|^^^Na^Sodium|R||19981023105715||||||||U|||CHIM|ARCH||251400||||F'
+        data = 'O|1|25140008|^1003^3|^^^Na^Sodium|R||||||||||U|||CHIM|ARCH||251400||||F'
         order = omnilab.server.Order(*decode_record(data))
         self.assertEqual(order.type, 'O')
         self.assertEqual(order.seq, 1)
@@ -106,8 +106,7 @@ class OmnilabTestCase(unittest.TestCase):
         self.assertEqual(order.test.assay_name, 'Sodium')
         self.assertEqual(order.priority, 'R')
         self.assertEqual(order.created_at, None)
-        self.assertEqual(order.sampled_at,
-                         datetime.datetime(1998, 10, 23, 10, 57, 15))
+        self.assertEqual(order.sampled_at, None)
         self.assertEqual(order.action_code, None)
         self.assertEqual(order.biomaterial, 'U')
         self.assertEqual(order.user_field_1, 'CHIM')
