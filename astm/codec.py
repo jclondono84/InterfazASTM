@@ -7,7 +7,10 @@
 # you should have received as part of this distribution.
 #
 
-from collections import Iterable
+try:
+    from collections.abc import Iterable
+except ImportError:  # Python 2
+    from collections import Iterable
 from .compat import unicode
 from .constants import (
     STX, ETX, ETB, CR, LF, CRLF,
