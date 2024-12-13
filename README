@@ -1,21 +1,23 @@
-Python implementation of ASTM E1381/1394 data protocol.
+Implementación en Python del protocolo de datos ASTM E1381/1394.
 
-This project aims to solve three tasks:
+Este proyecto pretende resolver tres tareas:
 
-1. Provide decoder ASTM data to Python objects and encode them back to valid
-   ASTM messages.
+1. Proporcione datos ASTM del decodificador a objetos Python y codifíquelos nuevamente para que sean válidos
+   Mensajes ASTM.
 
-2. Provide ability to create your own ASTM client and server applications
-   followed by common specification routines.
+2. Proporcionar la capacidad de crear sus propias aplicaciones de cliente y servidor ASTM.
+   seguido de rutinas de especificación comunes.
 
-3. Provide ready-to-use "drivers" for various ASTM-driven analysers,
-   middlewares and other software or hardware solutions.
+3. Proporcionar "controladores" listos para usar para varios analizadores basados ​​en ASTM.
+   middlewares y otras soluciones de software o hardware.
 
 
-Depending on your needs you may use this project in one of these ways.
-Currently, all communication routines are implemented for TCP/IP protocol driven
-by a bit improved standard asynclib.
+Dependiendo de sus necesidades, puede utilizar este proyecto de una de estas maneras.
+Actualmente, todas las rutinas de comunicación se implementan para el protocolo TCP/IP.
+por un estándar asynclib un poco mejorado.
 
-Read the docs for more info:
-http://python-astm.readthedocs.org
+© 2024 Juan camilo londoño amaya. Todos los derechos reservados.
 
+Este software y todo su contenido, incluyendo pero no limitado a código fuente, documentación, diseño, gráficos y otros materiales, están protegidos por las leyes de derechos de autor y otras leyes de propiedad intelectual. No se permite la reproducción, distribución, modificación o uso del software de ninguna forma sin el permiso expreso y por escrito del titular de los derechos de autor.
+
+El uso de este software está sujeto a los términos y condiciones especificados en [nombre de tu licencia o acuerdo de usuario, si aplica]. Cualquier violación de los derechos de autor podrá resultar en acciones legales.
